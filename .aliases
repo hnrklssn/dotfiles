@@ -1,5 +1,6 @@
 alias gst="git status"
 alias aliases="vim ~/.aliases"
-alias profile="vim ~/.zprofile"
-alias resource="source ~/.zprofile"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias profile="vim ~/.config/fish/config.fish"
+alias resource="source ~/.config/fish/config.fish"
+alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cst='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
