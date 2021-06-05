@@ -33,9 +33,6 @@ git/
 .viminfo
 .lesshst
 
-# contains signing key
-.gitconfig
-
 # managed by vundle
 .vim/bundle/
 
