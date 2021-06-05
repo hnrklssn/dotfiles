@@ -38,3 +38,6 @@ git/
 
 # managed by vundle
 .vim/bundle/
+
+# avoid "Operation not permitted" when running conf status on mac
+.Trash/
