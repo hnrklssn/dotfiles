@@ -1,7 +1,7 @@
 [user]
 	signingkey = 6DCEEDCC
 	email = hnrklssn@gmail.com
-	name = Henrik G Olsson
+	name = Henrik G. Olsson
 [core]
 	untrackedCache = true
 [commit]
