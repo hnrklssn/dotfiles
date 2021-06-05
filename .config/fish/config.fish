@@ -10,7 +10,10 @@ funcsave .....
 funcsave ......
 
 source ~/.aliases
-eval (/opt/homebrew/bin/brew shellenv)
+
+if test -d /opt/homebrew/bin/brew
+    eval (/opt/homebrew/bin/brew shellenv)
+end
 
 set -x PATH "$PATH:/opt/homebrew/opt/ccache/libexec:~/git/arcanist/bin/"
 
@@ -19,4 +22,6 @@ set -x VISUAL vim
 fish_vi_key_bindings
 
 # Source Nix setup script
-fenv source ~/.nix-profile/etc/profile.d/nix.sh
+if test -e ~/.nix-profile/etc/profile.d/nix.sh
+    fenv source ~/.nix-profile/etc/profile.d/nix.sh
+end

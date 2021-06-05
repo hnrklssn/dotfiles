@@ -36,7 +36,9 @@ git/
 .local/share/fish/
 .local/share/z/
 .viminfo
+.vim/.netrwhist
 .lesshst
+.tmux/plugins/*
 
 # managed by vundle
 .vim/bundle/

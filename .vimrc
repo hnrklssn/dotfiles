@@ -90,10 +90,10 @@ map <leader>h :echo "
             \ notes CAPS är kass, escape är långt bort  ----> xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' \n
             \"<CR>
 
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'leafgarland/typescript-vim'
+"Plugin 'rust-lang/rust.vim'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'derekwyatt/vim-scala'
+"Plugin 'leafgarland/typescript-vim'
 Plugin 'liuchengxu/space-vim-theme'
 
 
