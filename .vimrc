@@ -33,8 +33,6 @@ set number
 set relativenumber
 set cursorline
 syntax on
-color desert
-
 " stop accidental commandline-history
 map q: :q<CR> 
 
@@ -42,6 +40,13 @@ map q: :q<CR>
 let mapleader = ' '
 " For filetype dependent shortcuts"
 let maplocalleader = ","
+
+" Toggle line numbers for copying
+map <leader>c :set number! relativenumber!<CR>
+" Don't mangle comments and indents when pasting
+map <leader>p :set paste! paste?<CR>
+set showmode
+
 
 " make some common thing easier
 map <leader>w :w<CR>
@@ -89,6 +94,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'liuchengxu/space-vim-theme'
+
 
 " Configuration for vim-scala
 au BufRead,BufNewFile *.sbt set filetype=scala
@@ -113,3 +120,4 @@ filetype plugin indent on    " required
 "
 let g:rustfmt_autosave = 1
 
+colorscheme space_vim_theme
