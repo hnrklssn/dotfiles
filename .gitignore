@@ -19,3 +19,22 @@ git/
 *sessions
 .cfg/
 .arcrc
+.CFUserTextEncoding
+
+# mostly state keeping, not user config
+.config/fish/completions/
+.config/fish/fish_variables
+.config/fish/fishfile
+.config/fish/functions/
+.config/htop/
+.config/iterm2/
+.local/share/fish/
+.local/share/z/
+.viminfo
+.lesshst
+
+# contains signing key
+.gitconfig
+
+# managed by vundle
+.vim/bundle/
