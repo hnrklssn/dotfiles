@@ -6,3 +6,5 @@
 	untrackedCache = true
 [commit]
 	gpgsign = true
+[color]
+	ui = auto
