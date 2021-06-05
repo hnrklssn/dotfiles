@@ -25,7 +25,12 @@ git/
 .config/fish/completions/
 .config/fish/fish_variables
 .config/fish/fishfile
+.config/fish/fishd.*
 .config/fish/functions/
+.config/fish/conf.d/pure_init.fish
+.config/fish/conf.d/_pure_init.fish
+.config/fish/conf.d/pure.fish
+.config/fish/conf.d/z.fish
 .config/htop/
 .config/iterm2/
 .local/share/fish/
