@@ -19,5 +19,6 @@ for f in (git --git-dir=$HOME/.cfg/ --work-tree=$HOME ls-files)
 end
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME checkout -f
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME submodule update --init
+git --git-dir=$HOME/.cfg/ --work-tree=$HOME branch -u origin/master
 ```
 When interacting with the dotfiles repo, whenever you would use a `git` command, replace it with `conf`. This is aliased to a git command specifying which repo and work tree to use.
