@@ -3,6 +3,8 @@ alias aliases="vim ~/.aliases"
 alias profile="vim ~/.config/fish/config.fish"
 alias vimrc="vim ~/.vimrc"
 alias vi="vim"
+alias irdiff="vimdiff +IgnoreIRNameDiff"
+alias asmdiff="vimdiff +IgnoreAsmRegsDiff"
 alias resource="source ~/.config/fish/config.fish"
 alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cst='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'

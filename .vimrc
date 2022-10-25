@@ -18,6 +18,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["asm"] }
 
 " Better spaces are better than tabs
 set tabstop=4       " The width of a TAB is set to 4.
@@ -91,7 +94,7 @@ map <leader>h :echo "
             \"<CR>
 
 "Plugin 'rust-lang/rust.vim'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 "Plugin 'derekwyatt/vim-scala'
 "Plugin 'leafgarland/typescript-vim'
 Plugin 'liuchengxu/space-vim-theme'
@@ -121,3 +124,30 @@ filetype plugin indent on    " required
 let g:rustfmt_autosave = 1
 
 colorscheme space_vim_theme
+
+function! IgnoreDiff(pattern)
+	let opt = ""
+	if &diffopt =~ "icase"
+		let opt = opt . "-i "
+	endif
+	if &diffopt =~ "iwhite"
+		let opt = opt . "-b "
+	endif
+" substitute for "."s to match lengths, "" to ignore completely
+	let cmd = "!diff -a --binary " . opt .
+				\ " <(perl -pe 's/" . a:pattern .  "/\"\" x length($0)/gei' " .
+				\ v:fname_in .
+				\ ") <(perl -pe 's/" . a:pattern .  "/\"\" x length($0)/gei' " .
+				\ v:fname_new .
+				\ ") > " . v:fname_out
+	echom cmd
+	silent execute cmd
+	redraw!
+	return cmd
+endfunction
+command! IgnoreHexDiff set diffexpr=IgnoreDiff('0x[0-9a-fA-F]+') | diffupdate
+command! IgnoreDecimalDiff set diffexpr=IgnoreDiff('\\.\\d+') | diffupdate
+command! IgnoreIRNameDiff set diffexpr=IgnoreDiff('\(\\%[\\w\\._]+\|bb[\\d_]+\|\\![\\d_]+\|\\W*;.*\|\\h+\$\|frag-spv.*\|\\,\ \\!dbg.*\)') | diffupdate
+command! NormalDiff set diffexpr= | diffupdate
+command! IgnoreRegAllocNameDiff set diffexpr=IgnoreDiff('\(0\\@\\d+\|[\\d]+r\|\\%[\\d_]+\|\\![\\d_]+\|\\W*;.*\|\\h+\$\|debug-location.*\|\\d+B\)') | diffupdate
+command! IgnoreAsmRegsDiff set diffexpr=IgnoreDiff('\ .+\$') | diffupdate
